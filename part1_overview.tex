@@ -1,20 +1,5 @@
-% Part 1: LLM Development Overview
-\section{LLM Development Overview}
-
-\begin{frame}
-\frametitle{The Evolution of Language Models}
-\begin{itemize}
-    \item From simple statistical models to neural networks
-    \item Key milestones in LLM development
-    \item Four fundamental pillars:
-    \begin{itemize}
-        \item Transformer architecture
-        \item Probabilistic modeling
-        \item Scaling laws
-        \item Emergent abilities
-    \end{itemize}
-\end{itemize}
-\end{frame}
+% Part 1: Technical Landscape
+\section{Technical Landscape}
 
 \begin{frame}
 \frametitle{Transformer Architecture}
@@ -44,9 +29,9 @@
     \item Autoregressive formulation: $P(w_t | w_1, ..., w_{t-1})$
     \item Training objectives:
     \begin{itemize}
-        \item Next token prediction (GPT family)
-        \item Masked language modeling (BERT family)
-        \item Denoising (BART, T5)
+        \item Autoregressive language modeling
+        \item Masked language modeling
+        \item Diffusion models
     \end{itemize}
     \item Maximum likelihood estimation via cross-entropy loss
     \item Foundation for generation and understanding
@@ -91,14 +76,39 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Foundation Models Era}
-\begin{itemize}
-    \item \textbf{Pre-2017}: Word embeddings (Word2Vec, GloVe)
-    \item \textbf{2017}: Transformer architecture introduced
-    \item \textbf{2018}: BERT (encoder) and GPT-1 (decoder)
-    \item \textbf{2019-2020}: Scaling up (GPT-2, GPT-3, T5)
-    \item \textbf{2021-2022}: Instruction tuning era
-    \item \textbf{2023-2024}: Multimodal and open models
-    \item \textbf{2024+}: Agent systems and specialized applications
-\end{itemize}
+\frametitle{LLM and Agent Development Roadmap}
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}]
+    % Axes
+    \draw[->] (0,0) -- (8,0) node[right] {Model Development};
+    \draw[->] (0,0) -- (0,6) node[above] {Agent Development};
+    
+    % Origin point
+    \fill (0,0) circle (2pt) node[below left] {Origin};
+    
+    % Model development path (horizontal axis)
+    \draw[->, thick, blue] (0,0) -- (4,0.3) node[midway, below] {Test-Time Scaling};
+    \draw[->, thick, red] (0,0) -- (4,-0.3) node[midway, below] {Multimodal};
+    
+    % Agent development path (vertical axis)
+    \draw[->, thick, green!60!black] (0,0) -- (0.3,4) node[midway, right] {Environment};
+    \draw[->, thick, orange] (-0.3,0) -- (-0.3,4) node[midway, left] {Long Context};
+    
+    % Convergence point
+    \fill[purple] (7,5.5) circle (3pt);
+    \node[purple, align=center] at (7,6.3) {Long-Context\\Multimodal RL};
+    
+    % Connecting paths to convergence
+    \draw[->, dashed, blue] (4,0.3) -- (7,5.5);
+    \draw[->, dashed, red] (4,-0.3) -- (7,5.5);
+    \draw[->, dashed, green!60!black] (0.3,4) -- (7,5.5);
+    \draw[->, dashed, orange] (-0.3,4) -- (7,5.5);
+    
+    % Labels
+    \node[blue] at (4,0.8) {Long Reasoning};
+    \node[red] at (4,-0.8) {Vision + Audio};
+    \node[green!60!black, rotate=90] at (0.8,4) {Embodied AI};
+    \node[orange, rotate=90] at (-0.8,4) {Memory Systems};
+\end{tikzpicture}
+\end{center}
 \end{frame}
