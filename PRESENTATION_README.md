@@ -7,44 +7,69 @@ This directory contains a LaTeX Beamer presentation about the development histor
 - **Title**: LLMs: From Pretrain To Agents
 - **Author**: Yaowei Zheng
 - **Date**: January 26, 2026
-- **Theme**: Luebeck
+- **Theme**: Luebeck (with customizations)
+- **Aspect Ratio**: 16:9
+- **Font Size**: 12pt
 - **Language**: English
 
-## File
+## Files
 
-- `LLMs_From_Pretrain_To_Agents.tex` - Main LaTeX Beamer source file
+- `main.tex` - Main LaTeX Beamer file (imports all parts)
+- `part1_overview.tex` - Part 1: LLM Development Overview
+- `part2_training_inference.tex` - Part 2: Training and Inference
+- `part3_agents.tex` - Part 3: Agent Evolution
+- `part4_future.tex` - Part 4: Future Development
+- `LLMs_From_Pretrain_To_Agents.tex` - Legacy single-file version (deprecated)
 
 ## Content Overview
 
-The presentation covers:
+The presentation is divided into 4 main parts:
 
-1. **Introduction to Large Language Models** - What are LLMs and their key characteristics
-2. **Early Days: Foundation Models** - Word embeddings and the Transformer revolution
-3. **The Pre-training Era** - BERT, GPT series, and other notable models
-4. **Instruction Tuning and Alignment** - From pre-training to instruction following, RLHF
-5. **Modern Era: Large-Scale LLMs** - Current landscape and open-source revolution
-6. **LLM Agents: The Frontier** - What are agents, frameworks, capabilities, and applications
-7. **Challenges and Future Directions** - Current challenges and future outlook
-8. **Conclusion** - Summary and key takeaways
+### Part 1: LLM Development Overview
+- Transformer architecture
+- Probabilistic modeling
+- Scaling laws
+- Emergent abilities
+
+### Part 2: Training and Inference
+- Pre-training strategies
+- Post-training and alignment (SFT, RLHF)
+- Multimodal alignment
+- Inference acceleration techniques
+- Reinforcement learning methods
+
+### Part 3: Agent Evolution
+- From model prompting to environment interaction
+- Context and memory systems
+- Web search integration
+- Tool use and APIs
+- Multi-agent systems
+
+### Part 4: Future Development
+- Long-horizon reinforcement learning
+- Test-time compute and inference scaling
+- Language-Use paradigm
+- World models
+- Continual learning and neuro-symbolic AI
 
 ## How to Compile
 
 ### Using pdflatex
 ```bash
-pdflatex LLMs_From_Pretrain_To_Agents.tex
-pdflatex LLMs_From_Pretrain_To_Agents.tex  # Run twice for TOC
+pdflatex main.tex
+pdflatex main.tex  # Run twice for TOC
 ```
 
 ### Using lualatex (recommended for better Unicode support)
 ```bash
-lualatex LLMs_From_Pretrain_To_Agents.tex
-lualatex LLMs_From_Pretrain_To_Agents.tex  # Run twice for TOC
+lualatex main.tex
+lualatex main.tex  # Run twice for TOC
 ```
 
 ### Using xelatex
 ```bash
-xelatex LLMs_From_Pretrain_To_Agents.tex
-xelatex LLMs_From_Pretrain_To_Agents.tex  # Run twice for TOC
+xelatex main.tex
+xelatex main.tex  # Run twice for TOC
 ```
 
 ## Requirements
@@ -62,11 +87,15 @@ Required LaTeX packages (usually included in standard distributions):
 ## Output
 
 The compilation will generate:
-- `LLMs_From_Pretrain_To_Agents.pdf` - The final presentation PDF
+- `main.pdf` - The final presentation PDF
 - Auxiliary files (.aux, .log, .nav, .out, .snm, .toc) - Can be safely deleted after compilation
 
 ## Notes
 
-- The presentation uses the Luebeck theme, which provides a professional appearance with a sidebar navigation
+- The presentation uses the Luebeck theme with customizations:
+  - `\setbeamertemplate{headline}{}` removes the high headline
+  - 16:9 aspect ratio for modern displays
+  - 12pt font size for better readability
 - Run the compilation command twice to ensure the table of contents is properly generated
+- The modular structure (separate .tex files) makes it easy to edit individual sections
 - The presentation is designed to be comprehensive yet concise, suitable for academic or professional settings

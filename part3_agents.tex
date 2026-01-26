@@ -1,0 +1,190 @@
+% Part 3: Agent Evolution
+\section{Agent Evolution}
+
+\begin{frame}
+\frametitle{From Models to Agents}
+\begin{itemize}
+    \item \textbf{Traditional LLMs}: Passive text generators
+    \item \textbf{LLM Agents}: Active problem solvers with:
+    \begin{itemize}
+        \item Perception (understanding environment)
+        \item Planning (decomposing tasks)
+        \item Action (executing operations)
+        \item Memory (maintaining state)
+    \end{itemize}
+    \item Evolution: Prompting $\rightarrow$ Context $\rightarrow$ Search $\rightarrow$ Tools $\rightarrow$ Environment
+    \item Goal: Autonomous task completion
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 1: Model Prompting}
+\begin{itemize}
+    \item \textbf{Zero-shot prompting}: Direct task description
+    \item \textbf{Few-shot prompting}: Examples in context
+    \item \textbf{Chain-of-Thought (CoT)}:
+    \begin{itemize}
+        \item "Let's think step by step"
+        \item Intermediate reasoning steps
+        \item Improved complex problem solving
+    \end{itemize}
+    \item \textbf{Advanced prompting}:
+    \begin{itemize}
+        \item Self-consistency: Multiple reasoning paths
+        \item Tree-of-Thoughts: Exploring multiple branches
+        \item ReAct: Reasoning + Acting interleaved
+    \end{itemize}
+    \item Limitations: No external knowledge, no persistent memory
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 2: Context and Memory}
+\begin{itemize}
+    \item \textbf{In-context learning}: Use examples in prompt
+    \item \textbf{Extended context windows}:
+    \begin{itemize}
+        \item GPT-4: 128K tokens
+        \item Claude: 200K tokens
+        \item Gemini: 1M+ tokens
+    \end{itemize}
+    \item \textbf{External memory systems}:
+    \begin{itemize}
+        \item Vector databases (Pinecone, Weaviate, Chroma)
+        \item Retrieval-Augmented Generation (RAG)
+        \item Semantic search for relevant context
+    \end{itemize}
+    \item \textbf{Benefits}: Access to dynamic knowledge, overcoming context limits
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 3: Web Search Integration}
+\begin{itemize}
+    \item \textbf{Motivation}: LLMs trained on static data become outdated
+    \item \textbf{Search-augmented LLMs}:
+    \begin{itemize}
+        \item Bing Chat, Perplexity AI
+        \item Real-time information retrieval
+        \item Citation and source tracking
+    \end{itemize}
+    \item \textbf{Workflow}:
+    \begin{enumerate}
+        \item Generate search query from user question
+        \item Retrieve relevant web results
+        \item Synthesize answer from search results
+        \item Provide citations
+    \end{enumerate}
+    \item Challenges: Information quality, relevance filtering
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 4: Tool Use and APIs}
+\begin{itemize}
+    \item \textbf{Tool-augmented LLMs}: Models that can use external tools
+    \item \textbf{Function calling} (OpenAI):
+    \begin{itemize}
+        \item Define tools with schemas
+        \item Model decides when and how to call
+        \item Execute function and return results
+    \end{itemize}
+    \item \textbf{Common tools}:
+    \begin{itemize}
+        \item Calculator for arithmetic
+        \item Code interpreter for computation
+        \item Database queries
+        \item API calls (weather, stocks, etc.)
+    \end{itemize}
+    \item \textbf{Frameworks}: Toolformer, Gorilla, ToolLLM
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 5: Environment Interaction}
+\begin{itemize}
+    \item \textbf{Embodied agents}: LLMs interacting with environments
+    \item \textbf{Web agents}:
+    \begin{itemize}
+        \item Browser automation (WebGPT, WebArena)
+        \item Form filling, navigation, extraction
+    \end{itemize}
+    \item \textbf{Code agents}:
+    \begin{itemize}
+        \item GitHub Copilot, Cursor
+        \item Code generation, debugging, testing
+    \end{itemize}
+    \item \textbf{Robotics integration}:
+    \begin{itemize}
+        \item PaLM-E, RT-2: Vision-language-action models
+        \item Natural language robot control
+    \end{itemize}
+    \item Full action-observation-reward loops
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Agent Architectures}
+\begin{itemize}
+    \item \textbf{ReAct (Reasoning + Acting)}:
+    \begin{itemize}
+        \item Interleave reasoning traces and actions
+        \item Synergy between thinking and doing
+    \end{itemize}
+    \item \textbf{ReWOO (Reasoning WithOut Observation)}:
+    \begin{itemize}
+        \item Plan all actions upfront
+        \item Execute in parallel
+        \item More efficient than sequential
+    \end{itemize}
+    \item \textbf{Reflexion}:
+    \begin{itemize}
+        \item Self-reflection on failures
+        \item Iterative improvement
+        \item Episodic memory of past attempts
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multi-Agent Systems}
+\begin{itemize}
+    \item Multiple specialized agents collaborating
+    \item \textbf{Approaches}:
+    \begin{itemize}
+        \item Hierarchical: Manager and worker agents
+        \item Collaborative: Peer-to-peer coordination
+        \item Competitive: Debate and verification
+    \end{itemize}
+    \item \textbf{Examples}:
+    \begin{itemize}
+        \item AutoGen (Microsoft): Conversable agents
+        \item MetaGPT: Multi-agent software company
+        \item ChatDev: Collaborative software development
+    \end{itemize}
+    \item \textbf{Benefits}: Specialization, robustness, complex task handling
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Agent Frameworks and Tools}
+\begin{itemize}
+    \item \textbf{LangChain/LangGraph}:
+    \begin{itemize}
+        \item Agent orchestration and composition
+        \item Pre-built tools and integrations
+        \item State management
+    \end{itemize}
+    \item \textbf{AutoGPT/BabyAGI}:
+    \begin{itemize}
+        \item Autonomous goal-driven agents
+        \item Self-directed task breakdown
+    \end{itemize}
+    \item \textbf{OpenAI Assistants API}:
+    \begin{itemize}
+        \item Built-in tools (code interpreter, retrieval)
+        \item Persistent threads and state
+    \end{itemize}
+    \item Lowering barrier to agent development
+\end{itemize}
+\end{frame}

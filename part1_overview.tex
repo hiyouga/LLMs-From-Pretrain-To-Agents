@@ -1,0 +1,104 @@
+% Part 1: LLM Development Overview
+\section{LLM Development Overview}
+
+\begin{frame}
+\frametitle{The Evolution of Language Models}
+\begin{itemize}
+    \item From simple statistical models to neural networks
+    \item Key milestones in LLM development
+    \item Four fundamental pillars:
+    \begin{itemize}
+        \item Transformer architecture
+        \item Probabilistic modeling
+        \item Scaling laws
+        \item Emergent abilities
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformer Architecture}
+\begin{itemize}
+    \item \textbf{"Attention is All You Need"} (Vaswani et al., 2017)
+    \item Self-attention mechanism: captures long-range dependencies
+    \item Key components:
+    \begin{itemize}
+        \item Multi-head attention
+        \item Positional encoding
+        \item Feed-forward networks
+        \item Layer normalization
+    \end{itemize}
+    \item Advantages:
+    \begin{itemize}
+        \item Parallel processing (vs. sequential RNNs)
+        \item Flexible context modeling
+        \item Scalable architecture
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Probabilistic Modeling}
+\begin{itemize}
+    \item Language modeling as probability distribution: $P(w_1, w_2, ..., w_n)$
+    \item Autoregressive formulation: $P(w_t | w_1, ..., w_{t-1})$
+    \item Training objectives:
+    \begin{itemize}
+        \item Next token prediction (GPT family)
+        \item Masked language modeling (BERT family)
+        \item Denoising (BART, T5)
+    \end{itemize}
+    \item Maximum likelihood estimation via cross-entropy loss
+    \item Foundation for generation and understanding
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Scaling Laws}
+\begin{itemize}
+    \item \textbf{Key insight}: Model performance scales predictably with:
+    \begin{itemize}
+        \item Model size (parameters)
+        \item Dataset size (tokens)
+        \item Compute budget (FLOPs)
+    \end{itemize}
+    \item Power law relationships (Kaplan et al., 2020)
+    \item Chinchilla scaling laws (Hoffmann et al., 2022):
+    \begin{itemize}
+        \item Optimal ratio of model size to training data
+        \item Compute-optimal training
+    \end{itemize}
+    \item Implications: Bigger models, more data = better performance
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Emergent Abilities}
+\begin{itemize}
+    \item Capabilities that appear at scale, absent in smaller models
+    \item Examples:
+    \begin{itemize}
+        \item Few-shot learning (GPT-3)
+        \item Chain-of-thought reasoning
+        \item Instruction following
+        \item Multi-step problem solving
+        \item Arithmetic and symbolic reasoning
+    \end{itemize}
+    \item Not explicitly trained, emerge from scale
+    \item Phase transitions in capability vs. scale
+    \item Critical for advanced applications
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Foundation Models Era}
+\begin{itemize}
+    \item \textbf{Pre-2017}: Word embeddings (Word2Vec, GloVe)
+    \item \textbf{2017}: Transformer architecture introduced
+    \item \textbf{2018}: BERT (encoder) and GPT-1 (decoder)
+    \item \textbf{2019-2020}: Scaling up (GPT-2, GPT-3, T5)
+    \item \textbf{2021-2022}: Instruction tuning era
+    \item \textbf{2023-2024}: Multimodal and open models
+    \item \textbf{2024+}: Agent systems and specialized applications
+\end{itemize}
+\end{frame}

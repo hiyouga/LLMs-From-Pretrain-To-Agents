@@ -1,0 +1,227 @@
+% Part 4: Future Development
+\section{Future Development}
+
+\begin{frame}
+\frametitle{Long-Horizon Reinforcement Learning}
+\begin{itemize}
+    \item \textbf{Current limitation}: Most RL focuses on short-term rewards
+    \item \textbf{Long-horizon RL challenges}:
+    \begin{itemize}
+        \item Credit assignment over many steps
+        \item Sparse rewards
+        \item Exploration in complex spaces
+    \end{itemize}
+    \item \textbf{Future directions}:
+    \begin{itemize}
+        \item Hierarchical RL: High-level and low-level policies
+        \item Intrinsic motivation and curiosity-driven exploration
+        \item Hindsight experience replay
+        \item Multi-task and transfer learning
+    \end{itemize}
+    \item Critical for complex real-world agent applications
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Test-Time Compute and Inference Scaling}
+\begin{itemize}
+    \item \textbf{Trend}: Scaling compute during inference, not just training
+    \item \textbf{Techniques}:
+    \begin{itemize}
+        \item Chain-of-Thought with more reasoning steps
+        \item Self-consistency: Sample multiple solutions
+        \item Tree search over reasoning paths
+        \item Iterative refinement and self-correction
+    \end{itemize}
+    \item \textbf{OpenAI o1/o3}: Extended reasoning during inference
+    \item Trade-off: Accuracy vs. latency and cost
+    \item Adaptive compute allocation based on task difficulty
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Language-Use: Beyond Next Token Prediction}
+\begin{itemize}
+    \item \textbf{Current paradigm}: Predict next token
+    \item \textbf{Language-Use perspective}:
+    \begin{itemize}
+        \item Language as a tool for achieving goals
+        \item Pragmatic understanding of intent
+        \item Context-aware communication
+    \end{itemize}
+    \item \textbf{Future models}:
+    \begin{itemize}
+        \item Goal-oriented language generation
+        \item Theory of mind: Understanding interlocutor's beliefs
+        \item Grounding in physical/social context
+    \end{itemize}
+    \item Moving from form to function in language modeling
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{World Models}
+\begin{itemize}
+    \item \textbf{Concept}: Internal model of how the world works
+    \item \textbf{Benefits}:
+    \begin{itemize}
+        \item Predict consequences of actions
+        \item Plan in model space (more efficient)
+        \item Understand causal relationships
+        \item Counterfactual reasoning: "What if...?"
+    \end{itemize}
+    \item \textbf{Approaches}:
+    \begin{itemize}
+        \item Learned world models from interaction data
+        \item Hybrid symbolic-neural models
+        \item Physics-informed neural networks
+    \end{itemize}
+    \item Key for embodied AI and robotics
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multimodal World Understanding}
+\begin{itemize}
+    \item \textbf{Vision}: Moving beyond basic image understanding
+    \begin{itemize}
+        \item 3D scene understanding
+        \item Video prediction and generation (Sora, etc.)
+        \item Spatial reasoning
+    \end{itemize}
+    \item \textbf{Audio}: Speech, music, environmental sounds
+    \item \textbf{Touch/Haptics}: For robotics applications
+    \item \textbf{Temporal reasoning}: Understanding change over time
+    \item \textbf{Unified representations}: One model, multiple modalities
+    \item Foundation for general-purpose agents
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Continual Learning and Adaptation}
+\begin{itemize}
+    \item \textbf{Challenge}: Current models are static after training
+    \item \textbf{Continual learning}:
+    \begin{itemize}
+        \item Learn from ongoing interactions
+        \item Adapt to distribution shift
+        \item Avoid catastrophic forgetting
+    \end{itemize}
+    \item \textbf{Approaches}:
+    \begin{itemize}
+        \item Elastic Weight Consolidation (EWC)
+        \item Progressive neural networks
+        \item Memory replay mechanisms
+        \item Meta-learning for fast adaptation
+    \end{itemize}
+    \item Personalization: Adapt to individual users over time
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Neuro-Symbolic AI}
+\begin{itemize}
+    \item \textbf{Motivation}: Combine strengths of neural and symbolic AI
+    \item \textbf{Neural strengths}: Pattern recognition, learning from data
+    \item \textbf{Symbolic strengths}: Logical reasoning, interpretability
+    \item \textbf{Integration approaches}:
+    \begin{itemize}
+        \item Neural-guided symbolic search
+        \item Symbolic knowledge injection in neural models
+        \item Differentiable programming and logic
+    \end{itemize}
+    \item \textbf{Applications}:
+    \begin{itemize}
+        \item Mathematical reasoning
+        \item Code synthesis and verification
+        \item Scientific discovery
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efficiency and Sustainability}
+\begin{itemize}
+    \item \textbf{Environmental concerns}: Energy consumption of large models
+    \item \textbf{Future directions}:
+    \begin{itemize}
+        \item Smaller, more capable models (Chinchilla optimal)
+        \item Mixture-of-Experts for sparse computation
+        \item On-device models for privacy and efficiency
+        \item Retrieval instead of memorization
+    \end{itemize}
+    \item \textbf{Sustainable AI practices}:
+    \begin{itemize}
+        \item Carbon-aware training
+        \item Model sharing and reuse
+        \item Efficient hardware (specialized accelerators)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Safety and Alignment Challenges}
+\begin{itemize}
+    \item \textbf{Critical issues}:
+    \begin{itemize}
+        \item Value alignment at scale
+        \item Robustness to adversarial inputs
+        \item Preventing misuse and harmful outputs
+        \item Interpretability and transparency
+    \end{itemize}
+    \item \textbf{Research directions}:
+    \begin{itemize}
+        \item Scalable oversight and constitutional AI
+        \item Adversarial training and red-teaming
+        \item Mechanistic interpretability
+        \item AI governance and policy frameworks
+    \end{itemize}
+    \item Essential for responsible deployment
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Toward Artificial General Intelligence (AGI)}
+\begin{itemize}
+    \item \textbf{AGI vision}: Human-level intelligence across all domains
+    \item \textbf{Key capabilities needed}:
+    \begin{itemize}
+        \item Flexible reasoning and problem solving
+        \item Transfer learning across domains
+        \item Common sense understanding
+        \item Long-term planning and goal pursuit
+        \item Social intelligence and collaboration
+    \end{itemize}
+    \item \textbf{Open questions}:
+    \begin{itemize}
+        \item Is scaling sufficient or do we need new paradigms?
+        \item Role of embodiment and interaction
+        \item Consciousness and self-awareness (if relevant)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Summary: The Road Ahead}
+\begin{itemize}
+    \item \textbf{Technical frontiers}:
+    \begin{itemize}
+        \item Long-horizon RL and world models
+        \item Multimodal integration
+        \item Efficiency and sustainability
+    \end{itemize}
+    \item \textbf{Capabilities frontiers}:
+    \begin{itemize}
+        \item Continual learning and adaptation
+        \item Neuro-symbolic reasoning
+        \item Test-time compute scaling
+    \end{itemize}
+    \item \textbf{Societal considerations}:
+    \begin{itemize}
+        \item Safety and alignment
+        \item Ethical deployment
+        \item Equitable access
+    \end{itemize}
+    \item The journey from pretrain to agents continues...
+\end{itemize}
+\end{frame}
