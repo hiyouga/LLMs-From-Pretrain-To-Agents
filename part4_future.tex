@@ -23,39 +23,28 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Test-Time Compute and Inference Scaling}
+\frametitle{Broader Agent Environments}
 \begin{itemize}
-    \item \textbf{Trend}: Scaling compute during inference, not just training
-    \item \textbf{Techniques}:
+    \item \textbf{Expanding agent capabilities} across diverse environments
+    \item \textbf{Physical environments}:
     \begin{itemize}
-        \item Chain-of-Thought with more reasoning steps
-        \item Self-consistency: Sample multiple solutions
-        \item Tree search over reasoning paths
-        \item Iterative refinement and self-correction
+        \item Robotics and embodied AI
+        \item Real-world manipulation and navigation
+        \item Human-robot interaction
     \end{itemize}
-    \item \textbf{OpenAI o1/o3}: Extended reasoning during inference
-    \item Trade-off: Accuracy vs. latency and cost
-    \item Adaptive compute allocation based on task difficulty
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Language-Use: Beyond Next Token Prediction}
-\begin{itemize}
-    \item \textbf{Current paradigm}: Predict next token
-    \item \textbf{Language-Use perspective}:
+    \item \textbf{Digital environments}:
     \begin{itemize}
-        \item Language as a tool for achieving goals
-        \item Pragmatic understanding of intent
-        \item Context-aware communication
+        \item Software engineering and code generation
+        \item Web automation and data extraction
+        \item Virtual assistants and productivity tools
     \end{itemize}
-    \item \textbf{Future models}:
+    \item \textbf{Social environments}:
     \begin{itemize}
-        \item Goal-oriented language generation
-        \item Theory of mind: Understanding interlocutor's beliefs
-        \item Grounding in physical/social context
+        \item Multi-agent collaboration
+        \item Human-AI teaming
+        \item Adaptive communication strategies
     \end{itemize}
-    \item Moving from form to function in language modeling
+    \item Goal: General-purpose agents that operate across all domains
 \end{itemize}
 \end{frame}
 
@@ -81,23 +70,6 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Multimodal World Understanding}
-\begin{itemize}
-    \item \textbf{Vision}: Moving beyond basic image understanding
-    \begin{itemize}
-        \item 3D scene understanding
-        \item Video prediction and generation (Sora, etc.)
-        \item Spatial reasoning
-    \end{itemize}
-    \item \textbf{Audio}: Speech, music, environmental sounds
-    \item \textbf{Touch/Haptics}: For robotics applications
-    \item \textbf{Temporal reasoning}: Understanding change over time
-    \item \textbf{Unified representations}: One model, multiple modalities
-    \item Foundation for general-purpose agents
-\end{itemize}
-\end{frame}
-
-\begin{frame}
 \frametitle{Continual Learning and Adaptation}
 \begin{itemize}
     \item \textbf{Challenge}: Current models are static after training
@@ -119,108 +91,25 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Neuro-Symbolic AI}
-\begin{itemize}
-    \item \textbf{Motivation}: Combine strengths of neural and symbolic AI
-    \item \textbf{Neural strengths}: Pattern recognition, learning from data
-    \item \textbf{Symbolic strengths}: Logical reasoning, interpretability
-    \item \textbf{Integration approaches}:
-    \begin{itemize}
-        \item Neural-guided symbolic search
-        \item Symbolic knowledge injection in neural models
-        \item Differentiable programming and logic
-    \end{itemize}
-    \item \textbf{Applications}:
-    \begin{itemize}
-        \item Mathematical reasoning
-        \item Code synthesis and verification
-        \item Scientific discovery
-    \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Efficiency and Sustainability}
-\begin{itemize}
-    \item \textbf{Environmental concerns}: Energy consumption of large models
-    \item \textbf{Future directions}:
-    \begin{itemize}
-        \item Smaller, more capable models (Chinchilla optimal)
-        \item Mixture-of-Experts for sparse computation
-        \item On-device models for privacy and efficiency
-        \item Retrieval instead of memorization
-    \end{itemize}
-    \item \textbf{Sustainable AI practices}:
-    \begin{itemize}
-        \item Carbon-aware training
-        \item Model sharing and reuse
-        \item Efficient hardware (specialized accelerators)
-    \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Safety and Alignment Challenges}
-\begin{itemize}
-    \item \textbf{Critical issues}:
-    \begin{itemize}
-        \item Value alignment at scale
-        \item Robustness to adversarial inputs
-        \item Preventing misuse and harmful outputs
-        \item Interpretability and transparency
-    \end{itemize}
-    \item \textbf{Research directions}:
-    \begin{itemize}
-        \item Scalable oversight and constitutional AI
-        \item Adversarial training and red-teaming
-        \item Mechanistic interpretability
-        \item AI governance and policy frameworks
-    \end{itemize}
-    \item Essential for responsible deployment
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Toward Artificial General Intelligence (AGI)}
-\begin{itemize}
-    \item \textbf{AGI vision}: Human-level intelligence across all domains
-    \item \textbf{Key capabilities needed}:
-    \begin{itemize}
-        \item Flexible reasoning and problem solving
-        \item Transfer learning across domains
-        \item Common sense understanding
-        \item Long-term planning and goal pursuit
-        \item Social intelligence and collaboration
-    \end{itemize}
-    \item \textbf{Open questions}:
-    \begin{itemize}
-        \item Is scaling sufficient or do we need new paradigms?
-        \item Role of embodiment and interaction
-        \item Consciousness and self-awareness (if relevant)
-    \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
 \frametitle{Summary: The Road Ahead}
 \begin{itemize}
     \item \textbf{Technical frontiers}:
     \begin{itemize}
         \item Long-horizon RL and world models
-        \item Multimodal integration
-        \item Efficiency and sustainability
-    \end{itemize}
-    \item \textbf{Capabilities frontiers}:
-    \begin{itemize}
+        \item Broader agent environments
         \item Continual learning and adaptation
-        \item Neuro-symbolic reasoning
-        \item Test-time compute scaling
     \end{itemize}
-    \item \textbf{Societal considerations}:
+    \item \textbf{Key challenges}:
     \begin{itemize}
-        \item Safety and alignment
-        \item Ethical deployment
-        \item Equitable access
+        \item Scaling to real-world complexity
+        \item Ensuring safety and alignment
+        \item Achieving true generalization
+    \end{itemize}
+    \item \textbf{Vision}:
+    \begin{itemize}
+        \item General-purpose agents across all domains
+        \item Seamless human-AI collaboration
+        \item Responsible and beneficial AI systems
     \end{itemize}
     \item The journey from pretrain to agents continues...
 \end{itemize}

@@ -12,7 +12,7 @@
         \item Action (executing operations)
         \item Memory (maintaining state)
     \end{itemize}
-    \item Evolution: Prompting $\rightarrow$ Context $\rightarrow$ Search $\rightarrow$ Tools $\rightarrow$ Environment
+    \item Evolution: Prompting $\rightarrow$ RAG $\rightarrow$ Web Search $\rightarrow$ Tools \& MCP
     \item Goal: Autonomous task completion
 \end{itemize}
 \end{frame}
@@ -39,21 +39,22 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Stage 2: Context and Memory}
+\frametitle{Stage 2: RAG (Retrieval-Augmented Generation)}
 \begin{itemize}
-    \item \textbf{In-context learning}: Use examples in prompt
-    \item \textbf{Extended context windows}:
-    \begin{itemize}
-        \item GPT-4: 128K tokens
-        \item Claude: 200K tokens
-        \item Gemini: 1M+ tokens
-    \end{itemize}
-    \item \textbf{External memory systems}:
+    \item \textbf{Concept}: Augment LLMs with external knowledge retrieval
+    \item \textbf{Components}:
     \begin{itemize}
         \item Vector databases (Pinecone, Weaviate, Chroma)
-        \item Retrieval-Augmented Generation (RAG)
-        \item Semantic search for relevant context
+        \item Embedding models for semantic search
+        \item Retrieval mechanism for relevant context
     \end{itemize}
+    \item \textbf{Workflow}:
+    \begin{enumerate}
+        \item User query $\rightarrow$ Embed query
+        \item Retrieve top-k relevant documents
+        \item Augment prompt with retrieved context
+        \item Generate response with LLM
+    \end{enumerate}
     \item \textbf{Benefits}: Access to dynamic knowledge, overcoming context limits
 \end{itemize}
 \end{frame}
@@ -80,111 +81,26 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Stage 4: Tool Use and APIs}
+\frametitle{Stage 4: Tools and MCP}
 \begin{itemize}
     \item \textbf{Tool-augmented LLMs}: Models that can use external tools
-    \item \textbf{Function calling} (OpenAI):
+    \item \textbf{Function calling}:
     \begin{itemize}
         \item Define tools with schemas
         \item Model decides when and how to call
         \item Execute function and return results
     \end{itemize}
+    \item \textbf{Model Context Protocol (MCP)}:
+    \begin{itemize}
+        \item Standard for connecting LLMs to data sources
+        \item Unified interface for tools and integrations
+        \item Extensible architecture
+    \end{itemize}
     \item \textbf{Common tools}:
     \begin{itemize}
-        \item Calculator for arithmetic
-        \item Code interpreter for computation
-        \item Database queries
-        \item API calls (weather, stocks, etc.)
+        \item Calculator, code interpreter
+        \item Database queries, API calls
+        \item Browser automation, file operations
     \end{itemize}
-    \item \textbf{Frameworks}: Toolformer, Gorilla, ToolLLM
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Stage 5: Environment Interaction}
-\begin{itemize}
-    \item \textbf{Embodied agents}: LLMs interacting with environments
-    \item \textbf{Web agents}:
-    \begin{itemize}
-        \item Browser automation (WebGPT, WebArena)
-        \item Form filling, navigation, extraction
-    \end{itemize}
-    \item \textbf{Code agents}:
-    \begin{itemize}
-        \item GitHub Copilot, Cursor
-        \item Code generation, debugging, testing
-    \end{itemize}
-    \item \textbf{Robotics integration}:
-    \begin{itemize}
-        \item PaLM-E, RT-2: Vision-language-action models
-        \item Natural language robot control
-    \end{itemize}
-    \item Full action-observation-reward loops
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Agent Architectures}
-\begin{itemize}
-    \item \textbf{ReAct (Reasoning + Acting)}:
-    \begin{itemize}
-        \item Interleave reasoning traces and actions
-        \item Synergy between thinking and doing
-    \end{itemize}
-    \item \textbf{ReWOO (Reasoning WithOut Observation)}:
-    \begin{itemize}
-        \item Plan all actions upfront
-        \item Execute in parallel
-        \item More efficient than sequential
-    \end{itemize}
-    \item \textbf{Reflexion}:
-    \begin{itemize}
-        \item Self-reflection on failures
-        \item Iterative improvement
-        \item Episodic memory of past attempts
-    \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Multi-Agent Systems}
-\begin{itemize}
-    \item Multiple specialized agents collaborating
-    \item \textbf{Approaches}:
-    \begin{itemize}
-        \item Hierarchical: Manager and worker agents
-        \item Collaborative: Peer-to-peer coordination
-        \item Competitive: Debate and verification
-    \end{itemize}
-    \item \textbf{Examples}:
-    \begin{itemize}
-        \item AutoGen (Microsoft): Conversable agents
-        \item MetaGPT: Multi-agent software company
-        \item ChatDev: Collaborative software development
-    \end{itemize}
-    \item \textbf{Benefits}: Specialization, robustness, complex task handling
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Agent Frameworks and Tools}
-\begin{itemize}
-    \item \textbf{LangChain/LangGraph}:
-    \begin{itemize}
-        \item Agent orchestration and composition
-        \item Pre-built tools and integrations
-        \item State management
-    \end{itemize}
-    \item \textbf{AutoGPT/BabyAGI}:
-    \begin{itemize}
-        \item Autonomous goal-driven agents
-        \item Self-directed task breakdown
-    \end{itemize}
-    \item \textbf{OpenAI Assistants API}:
-    \begin{itemize}
-        \item Built-in tools (code interpreter, retrieval)
-        \item Persistent threads and state
-    \end{itemize}
-    \item Lowering barrier to agent development
 \end{itemize}
 \end{frame}

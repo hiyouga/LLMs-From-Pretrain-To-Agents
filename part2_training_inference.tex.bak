@@ -67,27 +67,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Training Infrastructure}
-\begin{itemize}
-    \item \textbf{Distributed training}:
-    \begin{itemize}
-        \item Data parallelism: Replicate model across devices
-        \item Model parallelism: Partition model across devices
-        \item Pipeline parallelism: Split model into stages
-        \item 3D parallelism: Combine all three strategies
-    \end{itemize}
-    \item \textbf{Optimization techniques}:
-    \begin{itemize}
-        \item Mixed precision training (FP16, BF16)
-        \item Gradient accumulation and checkpointing
-        \item ZeRO optimizer (DeepSpeed)
-    \end{itemize}
-    \item \textbf{Frameworks}: PyTorch FSDP, DeepSpeed, Megatron-LM
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Inference Infrastructure}
+\frametitle{Inference Acceleration}
 \begin{itemize}
     \item \textbf{Model compression}:
     \begin{itemize}
@@ -131,5 +111,25 @@
         \item Outcome-based and trajectory-based rewards
         \item Multi-objective RL for competing goals
     \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efficient Fine-tuning Methods}
+\begin{itemize}
+    \item \textbf{Parameter-Efficient Fine-Tuning (PEFT)}:
+    \begin{itemize}
+        \item LoRA (Low-Rank Adaptation): Add trainable low-rank matrices
+        \item QLoRA: Quantized LoRA for memory efficiency
+        \item Prefix tuning: Learn soft prompts
+        \item Adapter layers: Small bottleneck modules
+    \end{itemize}
+    \item \textbf{Advantages}:
+    \begin{itemize}
+        \item Reduce memory and compute requirements
+        \item Enable fine-tuning on consumer hardware
+        \item Modular task-specific adaptations
+    \end{itemize}
+    \item Popular for domain adaptation and personalization
 \end{itemize}
 \end{frame}
