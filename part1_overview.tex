@@ -79,20 +79,28 @@
 \frametitle{LLM and Agent Development Roadmap}
 \begin{center}
 \begin{tikzpicture}[scale=1.0, every node/.style={scale=0.9}]
+    % Define the size of the square
+    \def\maxsize{6}
+    
+    % Fill upper-left triangle (Comprehensive Environment)
+    \fill[green!20] (0,0) -- (0,\maxsize) -- (\maxsize,\maxsize) -- cycle;
+    
+    % Fill lower-right triangle (Long Reasoning)
+    \fill[blue!20] (0,0) -- (\maxsize,0) -- (\maxsize,\maxsize) -- cycle;
+    
+    % Draw the diagonal line y=x
+    \draw[thick, dashed] (0,0) -- (\maxsize,\maxsize);
+    
     % Axes
-    \draw[->, thick] (0,0) -- (8,0) node[right] {Model Capability};
-    \draw[->, thick] (0,0) -- (0,6) node[above] {Agent Environment};
+    \draw[->, thick] (0,0) -- (\maxsize+1,0) node[right] {Model Capability};
+    \draw[->, thick] (0,0) -- (0,\maxsize+1) node[above] {Agent Environment};
     
-    % Origin point
-    \fill (0,0) circle (3pt) node[below left] {Origin};
+    % Origin point (without text label)
+    \fill (0,0) circle (3pt);
     
-    % Model development path (horizontal axis) - Long Reasoning
-    \draw[->, very thick, blue] (0,0) -- (7,0);
-    \node[blue, below] at (3.5,-0.3) {Long Reasoning};
-    
-    % Agent development path (vertical axis) - Comprehensive Environment
-    \draw[->, very thick, green!60!black] (0,0) -- (0,5);
-    \node[green!60!black, rotate=90, above] at (-0.4,2.5) {Comprehensive Environment};
+    % Labels for regions
+    \node[green!60!black, align=center] at (1.5,4.5) {Comprehensive\\Environment};
+    \node[blue!60!black, align=center] at (4.5,1.5) {Long\\Reasoning};
 \end{tikzpicture}
 \end{center}
 \end{frame}
