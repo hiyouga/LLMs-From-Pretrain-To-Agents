@@ -8,7 +8,7 @@
     \begin{equation*}
     \mathcal{L}_{\text{AR}} = -\sum_{t=1}^{T} \log P(x_t | x_{<t}; \theta)
     \end{equation*}
-    \item \textbf{Data is the core of pre-training}
+    \item \textbf{High-quality data is the core of pre-training}
     \item Weak-to-strong generalization in data:
     \begin{itemize}
         \item Natural web corpora $\rightarrow$ Large-scale synthetic data
@@ -58,19 +58,19 @@ Unified efficient training framework supporting over 500 LLMs.
 \begin{frame}
 \frametitle{Multimodal Alignment}
 \begin{itemize}
-    \item \textbf{Multimodal understanding}:
+    \item \textbf{Multimodal understanding}
     \begin{itemize}
         \item Image-to-text (I2T)
         \item Video-to-text (V2T)
         \item Audio-to-text (A2T)
     \end{itemize}
-    \item \textbf{Multimodal generation}:
+    \item \textbf{Multimodal generation}
     \begin{itemize}
         \item Text-to-image (T2I)
         \item Text-to-video (T2V)
         \item Text-to-speech (TTS)
     \end{itemize}
-    \item \textbf{Unified multimodal understanding and generation}:
+    \item \textbf{Unified multimodal understanding and generation}
     \begin{itemize}
         \item Any-to-Any (X2X)
     \end{itemize}
@@ -106,7 +106,7 @@ A torch-native distributed training framework with decoupled 3D parallelism for 
 \begin{frame}
 \frametitle{Model Training Anatomy}
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/efficient_training.png}
+\includegraphics[width=0.85\textwidth]{images/efficient_training.png}
 \end{center}
 \end{frame}
 
@@ -160,4 +160,3 @@ An efficient, scalable and multimodality RL training framework for LLMs.
 \includegraphics[width=0.9\textwidth]{images/reasoning_models.png}
 \end{center}
 \end{frame}
-
