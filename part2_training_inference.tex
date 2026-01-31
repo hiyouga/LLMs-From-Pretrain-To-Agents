@@ -2,112 +2,109 @@
 \section{Improving Model Capabilities}
 
 \begin{frame}
-\frametitle{Pre-training: Foundation Building}
+\frametitle{Pre-training on Large-Scale Corpora}
 \begin{itemize}
     \item Autoregressive pre-training objective:
     \begin{equation*}
     \mathcal{L}_{\text{AR}} = -\sum_{t=1}^{T} \log P(x_t | x_{<t}; \theta)
     \end{equation*}
     \item \textbf{Data is the core of pre-training}
-    \item Evolution from weak to strong:
+    \item Weak-to-strong generalization in data:
     \begin{itemize}
-        \item Internet corpus $\rightarrow$ Large-scale synthetic data
+        \item Natural web corpora $\rightarrow$ Large-scale synthetic data
     \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{EasyDataset}
+\frametitle{Our work: Easy Dataset (EMNLP'25, GitHub 13K Stars)}
+A software that uses LLMs to extract synthetic data from unstructured documents.
 \begin{center}
-Extracting synthetic data from corpus using modern models
-\vspace{0.3cm}
-
-\includegraphics[width=0.9\textwidth]{images/easydataset_framework.png}
+\includegraphics[width=0.8\textwidth]{images/easydataset_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{DataFlow}
+\frametitle{Our work: DataFlow (arXiv'25, GitHub 2.8K Stars)}
+A collection of  reusable operators and pipelines for automated data processing.
 \begin{center}
-Automated data workflow for large language models
-\vspace{0.3cm}
-
 \includegraphics[width=0.9\textwidth]{images/dataflow_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Post-training: Alignment and Specialization}
+\frametitle{Post-training for Human Preference Alignment}
 \begin{itemize}
     \item Traditional three-stage pipeline:
     \begin{itemize}
         \item SFT $\rightarrow$ RM $\rightarrow$ RLHF
     \end{itemize}
-    \item Evolution to modern approaches:
+    \item Modern approaches:
     \begin{itemize}
-        \item Cold-start methods
-        \item RLVR (Reinforcement Learning from Verification and Reasoning)
+        \item Cold-start with knowledge distillation
+        \item RLVR (Reinforcement Learning with Verifiable Rewards)
     \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{LlamaFactory}
+\frametitle{Our work: LlamaFactory (ACL'24, GitHub 66K Stars)}
+Unified efficient training framework supporting over 500 LLMs.
 \begin{center}
-Unified post-training framework supporting 100+ models with efficient training
-\vspace{0.3cm}
-
-\includegraphics[width=0.9\textwidth]{images/llamafactory_framework.png}
+\includegraphics[width=0.7\textwidth]{images/llamafactory_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Multimodal Alignment}
 \begin{itemize}
-    \item \textbf{Multimodal Understanding}:
+    \item \textbf{Multimodal understanding}:
     \begin{itemize}
-        \item Images, videos, audio
+        \item Image-to-text (I2T)
+        \item Video-to-text (V2T)
+        \item Audio-to-text (A2T)
     \end{itemize}
-    \item \textbf{Multimodal Generation}:
+    \item \textbf{Multimodal generation}:
     \begin{itemize}
-        \item Text-to-image, text-to-video, text-to-audio
+        \item Text-to-image (T2I)
+        \item Text-to-video (T2V)
+        \item Text-to-speech (TTS)
     \end{itemize}
-    \item \textbf{Unified Understanding and Generation Models}:
+    \item \textbf{Unified multimodal understanding and generation}:
     \begin{itemize}
-        \item End-to-end multimodal systems
+        \item Any-to-Any (X2X)
     \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{VeOmni}
+\frametitle{Our work: VeOmni (AAAI'26, GitHub 1.6K Stars)}
+A torch-native distributed training framework with decoupled 3D parallelism for omni-modal models.
 \begin{center}
-Native tri-modal distributed training framework with decoupled 3D parallelism supporting diverse GPU hardware
-\vspace{0.3cm}
-
-\includegraphics[width=0.9\textwidth]{images/veomni_framework.png}
+\includegraphics[width=0.8\textwidth]{images/veomni_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Training Infrastructure}
 \begin{itemize}
-    \item \textbf{3D Parallelism Evolution}:
+    \item \textbf{Distributed training:}:
     \begin{itemize}
         \item Megatron: DP + TP + PP
-        \item Modern: FSDP + SP + EP
+        \item Torch-native: FSDP + SP + EP
     \end{itemize}
     \item \textbf{Optimization techniques}:
     \begin{itemize}
-        \item Mixed precision: FP16, BF16 $\rightarrow$ FP8, FP4
-        \item Gradient accumulation and recomputation
-        \item High-performance operators: Flash Attention, Triton, DeepEP, Linear Attention
-        \item Distributed optimizers
+        \item Mixed precision: FP16, BF16, FP8, FP4
+        \item Gradient accumulation and activation recomputation
+        \item GPU Kernels: FlashAttention, Triton, DeepEP, LinearAttention
+        \item Distributed optimizers: DeepSpeed ZeRO
     \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
+\frametitle{Model Training Anatomy}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/efficient_training.png}
 \end{center}
@@ -116,49 +113,49 @@ Native tri-modal distributed training framework with decoupled 3D parallelism su
 \begin{frame}
 \frametitle{Inference Infrastructure}
 \begin{itemize}
-    \item \textbf{Key frameworks}: vLLM, SGLang
+    \item \textbf{Popular frameworks}: vLLM, SGLang
     \item \textbf{Core technologies}:
     \begin{itemize}
-        \item Paged Attention
+        \item PagedAttention
         \item Continuous batching
-        \item PD separation (Prefill-Decode)
-        \item AF separation (Attention-FFN)
+        \item Prefill-Decode disaggregation
+        \item Attention-FFN disaggregation
         \item Model parallelism
-        \item Quantization
+        \item Post Training Quantization (PTQ)
         \item Speculative decoding
-        \item MTP (Multi-Token Prediction)
+        \item Multi-Token Prediction (MTP)
     \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Reinforcement Learning in LLMs}
+\frametitle{Reinforcement Learning for LLMs}
 \begin{itemize}
-    \item \textbf{Example: Playing card game (DouDiZhu)}
-    \item \textbf{Trajectory sampling}: Play one complete game
-    \item \textbf{Environment feedback}: Win or lose
-    \item \textbf{Advantage function}: Game review and analysis
-    \item \textbf{Policy update}: Adjust strategy for next game
+    \item \textbf{Example:} Playing card game
+    \item \textbf{Trajectory sampling:} Play one complete game
+    \item \textbf{Environment feedback:} Win or lose
+    \item \textbf{Advantage function:} Game review and analysis
+    \item \textbf{Policy update:} Adjust strategy for next game
 \end{itemize}
 \end{frame}
 
 \begin{frame}
+\frametitle{RL Algorithms}
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/rl_algorithms.png}
+\includegraphics[width=0.7\textwidth]{images/rl_algorithms.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{VeRL}
+\frametitle{Our work: EasyR1 (GitHub 4.5K Stars)}
+An efficient, scalable and multimodality RL training framework for LLMs.
 \begin{center}
-Reinforcement learning training framework for LLMs with parallel training and inference acceleration
-\vspace{0.3cm}
-
-\includegraphics[width=0.9\textwidth]{images/verl_framework.png}
+\includegraphics[width=0.7\textwidth]{images/verl_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
+\frametitle{Reasoning Models Timeline}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/reasoning_models.png}
 \end{center}
