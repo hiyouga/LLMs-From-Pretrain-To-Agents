@@ -1,5 +1,5 @@
-% Part 3: Agent Evolution
-\section{Agent Evolution}
+% Part 3: The Rise of Agentic Intelligence
+\section{The Rise of Agentic Intelligence}
 
 \begin{frame}
 \frametitle{From Models to Agents}
@@ -28,79 +28,114 @@
         \item Intermediate reasoning steps
         \item Improved complex problem solving
     \end{itemize}
-    \item \textbf{Advanced prompting}:
+    \item \textbf{Advanced prompting techniques}:
     \begin{itemize}
-        \item Self-consistency: Multiple reasoning paths
-        \item Tree-of-Thoughts: Exploring multiple branches
-        \item ReAct: Reasoning + Acting interleaved
+        \item Reflection: Self-evaluation and refinement
+        \item Planning: Task decomposition and strategy
+        \item Role playing: Adopting specific personas
+        \item Debating: Multi-perspective reasoning
     \end{itemize}
     \item Limitations: No external knowledge, no persistent memory
 \end{itemize}
 \end{frame}
 
 \begin{frame}
+\raggedright
+RAL-Writer: Generating ultra-long texts through advanced planning
+\vspace{0.3cm}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/ral_writer_framework.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
 \frametitle{Stage 2: RAG (Retrieval-Augmented Generation)}
 \begin{itemize}
-    \item \textbf{Concept}: Augment LLMs with external knowledge retrieval
-    \item \textbf{Components}:
-    \begin{itemize}
-        \item Vector databases (Pinecone, Weaviate, Chroma)
-        \item Embedding models for semantic search
-        \item Retrieval mechanism for relevant context
-    \end{itemize}
-    \item \textbf{Workflow}:
+    \item \textbf{Traditional RAG workflow}:
     \begin{enumerate}
-        \item User query $\rightarrow$ Embed query
-        \item Retrieve top-k relevant documents
-        \item Augment prompt with retrieved context
-        \item Generate response with LLM
+        \item Document chunking
+        \item BM25 or vector-based retrieval
+        \item Prompt augmentation
+        \item LLM generates response
     \end{enumerate}
-    \item \textbf{Benefits}: Access to dynamic knowledge, overcoming context limits
+    \item \textbf{Evolution to Agentic RAG}:
+    \begin{itemize}
+        \item RAG as a tool that agents can invoke
+        \item Active decision-making on when to retrieve
+        \item Dynamic retrieval strategies
+    \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\raggedright
+EasyRAG: Enhanced Q\&A accuracy through query expansion, dynamic retrieval, and answer optimization
+\vspace{0.3cm}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/easyrag_framework.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Stage 3: Web Search Integration}
 \begin{itemize}
-    \item \textbf{Motivation}: LLMs trained on static data become outdated
-    \item \textbf{Search-augmented LLMs}:
+    \item \textbf{Comparison with RAG}:
     \begin{itemize}
-        \item Bing Chat, Perplexity AI
-        \item Real-time information retrieval
-        \item Citation and source tracking
+        \item Web search: More proactive and dynamic
+        \item RAG: More passive with pre-indexed knowledge
+        \item Web search $\approx$ Agentic RAG (both use tool-use capabilities)
     \end{itemize}
-    \item \textbf{Workflow}:
-    \begin{enumerate}
-        \item Generate search query from user question
-        \item Retrieve relevant web results
-        \item Synthesize answer from search results
-        \item Provide citations
-    \end{enumerate}
-    \item Challenges: Information quality, relevance filtering
+    \item \textbf{Key insight}: Web search is essentially tool use
+    \item \textbf{Advantages}:
+    \begin{itemize}
+        \item Real-time information access
+        \item Broader knowledge coverage
+        \item Active query formulation
+    \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\raggedright
+Context9: Transforming local knowledge bases into searchable second brains for LLMs
+\vspace{0.3cm}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/context9_framework.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Stage 4: Tools and MCP}
 \begin{itemize}
-    \item \textbf{Tool-augmented LLMs}: Models that can use external tools
-    \item \textbf{Function calling}:
+    \item \textbf{Evolution of tool use}:
     \begin{itemize}
-        \item Define tools with schemas
-        \item Model decides when and how to call
-        \item Execute function and return results
+        \item Single tool call $\rightarrow$ Multi-turn tool calls
+        \item No reasoning $\rightarrow$ Reasoning with interleaved thinking
+    \end{itemize}
+    \item \textbf{Expanding tool scope}:
+    \begin{itemize}
+        \item Defined Python functions
+        \item File system operations
+        \item GUI interactions
+        \item Full system shell access
     \end{itemize}
     \item \textbf{Model Context Protocol (MCP)}:
     \begin{itemize}
         \item Standard for connecting LLMs to data sources
         \item Unified interface for tools and integrations
-        \item Extensible architecture
-    \end{itemize}
-    \item \textbf{Common tools}:
-    \begin{itemize}
-        \item Calculator, code interpreter
-        \item Database queries, API calls
-        \item Browser automation, file operations
     \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\raggedright
+UITars: Breaking GUI agent benchmark records through comprehensive fine-tuning (SFT, DPO, and RL)
+\vspace{0.3cm}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/uitars_framework.png}
+\end{center}
 \end{frame}
