@@ -1,5 +1,5 @@
-% Part 1: Technical Landscape
-\section{Technical Landscape}
+% Part 1: Evolutionary Pathways of Large Language Models
+\section{Evolutionary Pathways of Large Language Models}
 
 \begin{frame}
 \frametitle{Transformer Architecture}
@@ -13,11 +13,11 @@
         \item Feed-forward networks
         \item Layer normalization
     \end{itemize}
-    \item Advantages:
+    \item Technical evolution of attention mechanisms:
     \begin{itemize}
-        \item Parallel processing (vs. sequential RNNs)
-        \item Flexible context modeling
-        \item Scalable architecture
+        \item From dense to sparse attention: MQA, GQA, MLA, DSA
+        \item From dense to sparse architectures: MoE (Mixture-of-Experts)
+        \item Towards fine-grained MoE specialization
     \end{itemize}
 \end{itemize}
 \end{frame}
@@ -25,49 +25,58 @@
 \begin{frame}
 \frametitle{Probabilistic Modeling}
 \begin{itemize}
-    \item Language modeling as probability distribution: $P(w_1, w_2, ..., w_n)$
-    \item Autoregressive formulation: $P(w_t | w_1, ..., w_{t-1})$
-    \item Training objectives:
+    \item Word-level probability prediction: $P(w_1, w_2, ..., w_n)$
+    \item Current training paradigms:
     \begin{itemize}
         \item Autoregressive language modeling
-        \item Masked language modeling
         \item Diffusion models
     \end{itemize}
-    \item Maximum likelihood estimation via cross-entropy loss
-    \item Foundation for generation and understanding
+    \item Training methods:
+    \begin{itemize}
+        \item Pre-training: Learning from large-scale data
+        \item Supervised Fine-Tuning (SFT): Task-specific adaptation
+        \item Direct Preference Optimization (DPO)
+        \item Proximal Policy Optimization (PPO)
+        \item Group Relative Policy Optimization (GRPO)
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Scaling Laws}
+\begin{columns}
+\column{0.5\textwidth}
 \begin{itemize}
-    \item \textbf{Key insight}: Model performance scales predictably with:
+    \item Power law relationship:
+    \[
+    L(N, D, C) \approx A N^{-\alpha} + B D^{-\beta} + E
+    \]
+    \item \textbf{Key variables}:
     \begin{itemize}
-        \item Model size (parameters)
-        \item Dataset size (tokens)
-        \item Compute budget (FLOPs)
+        \item $N$: Model size (parameters)
+        \item $D$: Dataset size (tokens)
+        \item $C$: Compute budget (FLOPs)
     \end{itemize}
-    \item Power law relationships (Kaplan et al., 2020)
-    \item Chinchilla scaling laws (Hoffmann et al., 2022):
-    \begin{itemize}
-        \item Optimal ratio of model size to training data
-        \item Compute-optimal training
-    \end{itemize}
-    \item Implications: Bigger models, more data = better performance
+    \item Optimal compute allocation strategies
 \end{itemize}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/scaling_law.pdf}
+\end{center}
+\end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{Emergent Abilities}
 \begin{itemize}
     \item Capabilities that appear at scale, absent in smaller models
-    \item Examples:
+    \item Key emergent behaviors:
     \begin{itemize}
-        \item Few-shot learning (GPT-3)
+        \item Few-shot learning
+        \item Zero-shot learning
         \item Chain-of-thought reasoning
-        \item Instruction following
-        \item Multi-step problem solving
-        \item Arithmetic and symbolic reasoning
+        \item ReAct loop (reasoning and acting)
+        \item Interleaved thinking
     \end{itemize}
     \item Not explicitly trained, emerge from scale
     \item Phase transitions in capability vs. scale
