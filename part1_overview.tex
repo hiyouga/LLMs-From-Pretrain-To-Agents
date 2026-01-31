@@ -13,10 +13,10 @@
         \item Feed-forward networks
         \item Layer normalization
     \end{itemize}
-    \item Technical evolution of attention mechanisms:
+    \item Technical evolution of transformer architectures:
     \begin{itemize}
-        \item From dense to sparse attention: MQA, GQA, MLA, DSA
-        \item From dense to sparse architectures: MoE (Mixture-of-Experts)
+        \item Dense Attention $\rightarrow$ MQA $\rightarrow$ GQA $\rightarrow$ MLA $\rightarrow$ DSA
+        \item Dense FFN $\rightarrow$ MoE
         \item Towards fine-grained MoE specialization
     \end{itemize}
 \end{itemize}
@@ -31,13 +31,11 @@
         \item Autoregressive language modeling
         \item Diffusion models
     \end{itemize}
-    \item Training methods:
+    \item Training methods: Pre-training, SFT, DPO, PPO, GRPO
+    \item Trends:
     \begin{itemize}
-        \item Pre-training: Learning from large-scale data
-        \item Supervised Fine-Tuning (SFT): Task-specific adaptation
-        \item Direct Preference Optimization (DPO)
-        \item Proximal Policy Optimization (PPO)
-        \item Group Relative Policy Optimization (GRPO)
+        \item From expert knowledge to autonomous exploration
+        \item From off-policy to on-policy learning
     \end{itemize}
 \end{itemize}
 \end{frame}
@@ -48,9 +46,9 @@
 \column{0.5\textwidth}
 \begin{itemize}
     \item Power law relationship:
-    \[
+    \begin{equation*}
     L(N, D, C) \approx A N^{-\alpha} + B D^{-\beta} + E
-    \]
+    \end{equation*}
     \item \textbf{Key variables}:
     \begin{itemize}
         \item $N$: Model size (parameters)
@@ -61,7 +59,7 @@
 \end{itemize}
 \column{0.5\textwidth}
 \begin{center}
-\includegraphics[width=\textwidth]{images/scaling_law.pdf}
+\includegraphics[width=0.7\textwidth]{images/scaling_law.pdf}
 \end{center}
 \end{columns}
 \end{frame}
@@ -78,9 +76,6 @@
         \item ReAct loop (reasoning and acting)
         \item Interleaved thinking
     \end{itemize}
-    \item Not explicitly trained, emerge from scale
-    \item Phase transitions in capability vs. scale
-    \item Critical for advanced applications
 \end{itemize}
 \end{frame}
 
