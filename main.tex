@@ -1,0 +1,53 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+\usetheme{Luebeck}
+\setbeamertemplate{headline}{}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{graphicx}
+
+\title{Scaling Intelligence:\\From Pretrained Models to Agentic Systems}
+\author{Yaowei Zheng}
+\institute{Beihang University}
+\date{\today}
+
+\begin{document}
+
+% Title page
+\frame{\titlepage}
+
+% Table of Contents
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% Part 1: Technical Landscape
+\input{part1_overview.tex}
+
+% Part 2: Training and Inference
+\input{part2_training_inference.tex}
+
+% Part 3: Agent Evolution
+\input{part3_agents.tex}
+
+% Part 4: Future Development
+\input{part4_future.tex}
+
+% Thank You
+\begin{frame}
+\frametitle{Thank You!}
+\begin{center}
+\Large Questions?
+\end{center}
+\end{frame}
+
+\end{document}

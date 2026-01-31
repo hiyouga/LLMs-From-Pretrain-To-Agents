@@ -1,0 +1,135 @@
+% Part 3: The Rise of Agentic Intelligence
+\section{The Rise of Agentic Intelligence}
+
+\begin{frame}
+\frametitle{From Models to Agents}
+\begin{itemize}
+    \item \textbf{Traditional LLMs}: Passive text generators
+    \item \textbf{LLM Agents}: Active problem solvers with:
+    \begin{itemize}
+        \item Perception (understanding environment)
+        \item Planning (decomposing tasks)
+        \item Action (executing operations)
+        \item Memory (maintaining state)
+    \end{itemize}
+    \item Evolution: Prompting $\rightarrow$ RAG $\rightarrow$ Web Search $\rightarrow$ Tools \& MCP
+    \item Goal: Autonomous task completion
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 1: Prompting Strategies}
+\begin{itemize}
+    \item \textbf{Few-shot prompting}: Few-shot exemplars
+    \item \textbf{Zero-shot prompting}: Task instructions
+    \item \textbf{Chain-of-Thought (CoT)}:
+    \begin{itemize}
+        \item ``Let's think step by step''
+        \item Improved complex problem solving
+    \end{itemize}
+    \item \textbf{Advanced prompting techniques}:
+    \begin{itemize}
+        \item Reflection: Self-evaluation and refinement
+        \item Planning: Task decomposition and strategy
+        \item Role playing: Adopting specific personas
+        \item Debating: Multi-perspective reasoning
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Our work: RAL-Writer (arXiv'25)}
+Proposes a retrieval-augmented long-text writer, combines plan-and-write strategy and context retrieval for controllable long-text generation.
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/ral_writer_framework.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 2: Retrieval-Augmented Generation (RAG)}
+\begin{itemize}
+    \item \textbf{Traditional RAG workflow}:
+    \begin{enumerate}
+        \item Document chunking
+        \item BM25 or vector-based retrieval
+        \item Prompt augmentation
+        \item LLM generates response
+    \end{enumerate}
+    \item \textbf{From traditional RAG to agentic RAG}:
+    \begin{itemize}
+        \item RAG as a tool that agents can invoke
+        \item Active decision-making on when to retrieve
+        \item Dynamic retrieval strategies
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Our work: EasyRAG (KDD'25 Workshop, 600 GitHub Stars)}
+Enhanced Q\&A accuracy through query expansion, dual-route retrieval, LLM re-ranking, and LLM answer refinement.
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/easyrag_framework.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 3: Web Search}
+\begin{itemize}
+    \item \textbf{Comparison with RAG}:
+    \begin{itemize}
+        \item Web search: More proactive and dynamic
+        \item RAG: More passive with pre-indexed knowledge
+        \item Web search $\approx$ Agentic RAG (both use tool-use capabilities)
+    \end{itemize}
+    \item \textbf{Key insight}: Web search is essentially tool use
+    \item \textbf{Advantages}:
+    \begin{itemize}
+        \item Real-time information access
+        \item Broader knowledge coverage
+        \item Active query formulation
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Our work: Context9 MCP Server}
+Transforming local knowledge into an LLM-ready second brain through MCP integration.
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/context9_framework.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stage 4: Tools and MCP}
+\begin{itemize}
+    \item \textbf{Evolution of tool use}:
+    \begin{itemize}
+        \item Single tool call $\rightarrow$ Multi-turn tool calls
+        \item No reasoning $\rightarrow$ One-shot reasoning $\rightarrow$ Interleaved reasoning
+    \end{itemize}
+    \item \textbf{Expanding tool scope}:
+    \begin{enumerate}
+        \item Pre-defined functions
+        \item Python interpreter
+        \item GUI interactions (embodied AI)
+        \item Full system shell access (Claude Code)
+    \end{enumerate}
+    \item \textbf{Model Context Protocol (MCP)}:
+    \begin{itemize}
+        \item Standard for connecting LLMs to data sources
+        \item Unified interface for tools and integrations
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Our work: UI-TARS (arXiv'25, 9.1K GitHub Stars)}
+\begin{columns}
+\column{0.5\textwidth}
+Breaking GUI agent benchmark records through carefully designed fine-tuning (SFT, DPO, and RL) and diverse agent environments.
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/uitars_framework.png}
+\end{center}
+\end{columns}
+\end{frame}
