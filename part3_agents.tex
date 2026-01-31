@@ -18,14 +18,13 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Stage 1: Model Prompting}
+\frametitle{Stage 1: Prompting Strategies}
 \begin{itemize}
-    \item \textbf{Zero-shot prompting}: Direct task description
-    \item \textbf{Few-shot prompting}: Examples in context
+    \item \textbf{Few-shot prompting}: Few-shot exemplars
+    \item \textbf{Zero-shot prompting}: Task instructions
     \item \textbf{Chain-of-Thought (CoT)}:
     \begin{itemize}
-        \item "Let's think step by step"
-        \item Intermediate reasoning steps
+        \item ``Let's think step by step''
         \item Improved complex problem solving
     \end{itemize}
     \item \textbf{Advanced prompting techniques}:
@@ -35,22 +34,19 @@
         \item Role playing: Adopting specific personas
         \item Debating: Multi-perspective reasoning
     \end{itemize}
-    \item Limitations: No external knowledge, no persistent memory
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\raggedright
-RAL-Writer: Generating ultra-long texts through advanced planning
-\vspace{0.3cm}
-
+\frametitle{Our work: RAL-Writer (arXiv'25)}
+Proposes a retrieval-augmented long-text writer, combines plan-and-write strategy and context retrieval for controllable long-text generation.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/ral_writer_framework.png}
+\includegraphics[width=0.8\textwidth]{images/ral_writer_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Stage 2: RAG (Retrieval-Augmented Generation)}
+\frametitle{Stage 2: Retrieval-Augmented Generation (RAG)}
 \begin{itemize}
     \item \textbf{Traditional RAG workflow}:
     \begin{enumerate}
@@ -59,7 +55,7 @@ RAL-Writer: Generating ultra-long texts through advanced planning
         \item Prompt augmentation
         \item LLM generates response
     \end{enumerate}
-    \item \textbf{Evolution to Agentic RAG}:
+    \item \textbf{From traditional RAG to agentic RAG}:
     \begin{itemize}
         \item RAG as a tool that agents can invoke
         \item Active decision-making on when to retrieve
@@ -69,17 +65,15 @@ RAL-Writer: Generating ultra-long texts through advanced planning
 \end{frame}
 
 \begin{frame}
-\raggedright
-EasyRAG: Enhanced Q\&A accuracy through query expansion, dynamic retrieval, and answer optimization
-\vspace{0.3cm}
-
+\frametitle{Our work: EasyRAG (KDD'25 Workshop, 600 GitHub Stars)}
+Enhanced Q\&A accuracy through query expansion, dual-route retrieval, LLM re-ranking, and LLM answer refinement.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/easyrag_framework.png}
+\includegraphics[width=0.8\textwidth]{images/easyrag_framework.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Stage 3: Web Search Integration}
+\frametitle{Stage 3: Web Search}
 \begin{itemize}
     \item \textbf{Comparison with RAG}:
     \begin{itemize}
@@ -98,12 +92,10 @@ EasyRAG: Enhanced Q\&A accuracy through query expansion, dynamic retrieval, and 
 \end{frame}
 
 \begin{frame}
-\raggedright
-Context9: Transforming local knowledge bases into searchable second brains for LLMs
-\vspace{0.3cm}
-
+\frametitle{Our work: Context9 MCP Server}
+Transforming local knowledge into an LLM-ready second brain through MCP integration.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/context9_framework.png}
+\includegraphics[width=0.6\textwidth]{images/context9_framework.png}
 \end{center}
 \end{frame}
 
@@ -113,15 +105,15 @@ Context9: Transforming local knowledge bases into searchable second brains for L
     \item \textbf{Evolution of tool use}:
     \begin{itemize}
         \item Single tool call $\rightarrow$ Multi-turn tool calls
-        \item No reasoning $\rightarrow$ Reasoning with interleaved thinking
+        \item No reasoning $\rightarrow$ One-shot reasoning $\rightarrow$ Interleaved reasoning
     \end{itemize}
     \item \textbf{Expanding tool scope}:
-    \begin{itemize}
-        \item Defined Python functions
-        \item File system operations
-        \item GUI interactions
-        \item Full system shell access
-    \end{itemize}
+    \begin{enumerate}
+        \item Pre-defined functions
+        \item Python interpreter
+        \item GUI interactions (embodied AI)
+        \item Full system shell access (Claude Code)
+    \end{enumerate}
     \item \textbf{Model Context Protocol (MCP)}:
     \begin{itemize}
         \item Standard for connecting LLMs to data sources
@@ -131,11 +123,13 @@ Context9: Transforming local knowledge bases into searchable second brains for L
 \end{frame}
 
 \begin{frame}
-\raggedright
-UITars: Breaking GUI agent benchmark records through comprehensive fine-tuning (SFT, DPO, and RL)
-\vspace{0.3cm}
-
+\frametitle{Our work: UI-TARS (arXiv'25, 9.1K GitHub Stars)}
+\begin{columns}
+\column{0.5\textwidth}
+Breaking GUI agent benchmark records through carefully designed fine-tuning (SFT, DPO, and RL) and diverse agent environments.
+\column{0.5\textwidth}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/uitars_framework.png}
 \end{center}
+\end{columns}
 \end{frame}
