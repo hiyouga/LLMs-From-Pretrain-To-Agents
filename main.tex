@@ -22,6 +22,14 @@
 \tableofcontents
 \end{frame}
 
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
 % Part 1: Technical Landscape
 \input{part1_overview.tex}
 
