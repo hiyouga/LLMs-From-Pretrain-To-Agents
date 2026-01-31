@@ -51,13 +51,20 @@
     \item {\small $N$: Model size (parameters)}
     \item {\small $D$: Dataset size (tokens)}
     \item {\small $C$: Compute budget (FLOPs)}
-    \item Optimal compute allocation strategies
 \end{itemize}
 \column{0.6\textwidth}
 \begin{center}
 \includegraphics[width=\textwidth]{images/scaling_law.pdf}
 \end{center}
 \end{columns}
+\vspace{0.5em}
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model} & Qwen1 & Qwen2 & Qwen2.5 & Qwen3 \\ \hline
+\textbf{Dataset Size}   & 3T    & 7T    & 18T     & 36T   \\ \hline
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -104,3 +111,4 @@
 \end{tikzpicture}
 \end{center}
 \end{frame}
+
