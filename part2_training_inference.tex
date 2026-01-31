@@ -1,111 +1,132 @@
-% Part 2: Training and Inference
-\section{Training and Inference}
+% Part 2: Improving Model Capabilities
+\section{Improving Model Capabilities}
 
 \begin{frame}
 \frametitle{Pre-training: Foundation Building}
 \begin{itemize}
-    \item \textbf{Objective}: Learn general language representations
-    \item Large-scale unsupervised learning on web-scale corpora
-    \item Common pre-training strategies:
+    \item Autoregressive pre-training objective:
+    \begin{equation*}
+    \mathcal{L}_{\text{AR}} = -\sum_{t=1}^{T} \log P(x_t | x_{<t}; \theta)
+    \end{equation*}
+    \item \textbf{Data is the core of pre-training}
+    \item Evolution from weak to strong:
     \begin{itemize}
-        \item Causal language modeling (GPT)
-        \item Masked language modeling (BERT)
-        \item Span corruption (T5)
-        \item Prefix language modeling (PaLM)
-    \end{itemize}
-    \item Training infrastructure:
-    \begin{itemize}
-        \item Distributed training across thousands of GPUs/TPUs
-        \item Mixed precision and gradient accumulation
-        \item Efficient optimizers (Adam, AdamW)
+        \item Internet corpus $\rightarrow$ Large-scale synthetic data
     \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{EasyDataset}
+\begin{center}
+Extracting synthetic data from corpus using modern models
+\vspace{0.3cm}
+
+\includegraphics[width=0.9\textwidth]{images/easydataset_framework.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{DataFlow}
+\begin{center}
+Automated data workflow for large language models
+\vspace{0.3cm}
+
+\includegraphics[width=0.9\textwidth]{images/dataflow_framework.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Post-training: Alignment and Specialization}
 \begin{itemize}
-    \item \textbf{Supervised Fine-tuning (SFT)}:
+    \item Traditional three-stage pipeline:
     \begin{itemize}
-        \item High-quality instruction-response pairs
-        \item Task-specific adaptation
-        \item Improved user interaction
+        \item SFT $\rightarrow$ RM $\rightarrow$ RLHF
     \end{itemize}
-    \item \textbf{Reinforcement Learning from Human Feedback (RLHF)}:
+    \item Evolution to modern approaches:
     \begin{itemize}
-        \item Reward model training from human preferences
-        \item PPO/DPO optimization
-        \item Alignment with human values
-    \end{itemize}
-    \item \textbf{Other techniques}:
-    \begin{itemize}
-        \item Constitutional AI (Anthropic)
-        \item RLAIF (AI feedback)
-        \item Instruction tuning (FLAN, InstructGPT)
+        \item Cold-start methods
+        \item RLVR (Reinforcement Learning from Verification and Reasoning)
     \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{LlamaFactory}
+\begin{center}
+Unified post-training framework supporting 100+ models with efficient training
+\vspace{0.3cm}
+
+\includegraphics[width=0.9\textwidth]{images/llamafactory_framework.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Multimodal Alignment}
 \begin{itemize}
-    \item Extending LLMs beyond text to vision, audio, video
-    \item \textbf{Vision-Language Models}:
+    \item \textbf{Multimodal Understanding}:
     \begin{itemize}
-        \item CLIP: Contrastive learning for image-text alignment
-        \item Flamingo, BLIP: Visual question answering
-        \item GPT-4V, Gemini: Native multimodal understanding
+        \item Images, videos, audio
     \end{itemize}
-    \item \textbf{Alignment strategies}:
+    \item \textbf{Multimodal Generation}:
     \begin{itemize}
-        \item Joint pre-training on multimodal data
-        \item Cross-modal attention mechanisms
-        \item Adapter modules for modality fusion
+        \item Text-to-image, text-to-video, text-to-audio
     \end{itemize}
-    \item \textbf{Applications}: Image captioning, visual reasoning, video understanding
+    \item \textbf{Unified Understanding and Generation Models}:
+    \begin{itemize}
+        \item End-to-end multimodal systems
+    \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{VeOmni}
+\begin{center}
+Native tri-modal distributed training framework with decoupled 3D parallelism supporting diverse GPU hardware
+\vspace{0.3cm}
+
+\includegraphics[width=0.9\textwidth]{images/veomni_framework.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Training Infrastructure}
 \begin{itemize}
-    \item \textbf{Distributed training}:
+    \item \textbf{3D Parallelism Evolution}:
     \begin{itemize}
-        \item Data parallelism: Replicate model across devices
-        \item Model parallelism: Partition model across devices
-        \item Pipeline parallelism: Split model into stages
-        \item 3D parallelism: Combine all three strategies
+        \item Megatron: DP + TP + PP
+        \item Modern: FSDP + SP + EP
     \end{itemize}
     \item \textbf{Optimization techniques}:
     \begin{itemize}
-        \item Mixed precision training (FP16, BF16)
-        \item Gradient accumulation and checkpointing
-        \item ZeRO optimizer (DeepSpeed)
+        \item Mixed precision: FP16, BF16 $\rightarrow$ FP8, FP4
+        \item Gradient accumulation and recomputation
+        \item High-performance operators: Flash Attention, Triton, DeepEP, Linear Attention
+        \item Distributed optimizers
     \end{itemize}
-    \item \textbf{Frameworks}: PyTorch FSDP, DeepSpeed, Megatron-LM
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/efficient_training.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Inference Infrastructure}
 \begin{itemize}
-    \item \textbf{Model compression}:
+    \item \textbf{Key frameworks}: vLLM, SGLang
+    \item \textbf{Core technologies}:
     \begin{itemize}
-        \item Quantization (8-bit, 4-bit, GGUF, AWQ)
-        \item Pruning and sparsity
-        \item Knowledge distillation (smaller student models)
-    \end{itemize}
-    \item \textbf{Efficient architectures}:
-    \begin{itemize}
-        \item Mixture-of-Experts (MoE): Sparse activation
-        \item FlashAttention: Memory-efficient attention
-        \item Grouped-Query Attention (GQA)
-    \end{itemize}
-    \item \textbf{Serving optimizations}:
-    \begin{itemize}
-        \item KV-cache for autoregressive generation
-        \item Batching and continuous batching
+        \item Paged Attention
+        \item Continuous batching
+        \item PD separation (Prefill-Decode)
+        \item AF separation (Attention-FFN)
+        \item Model parallelism
+        \item Quantization
         \item Speculative decoding
+        \item MTP (Multi-Token Prediction)
     \end{itemize}
 \end{itemize}
 \end{frame}
@@ -113,23 +134,32 @@
 \begin{frame}
 \frametitle{Reinforcement Learning in LLMs}
 \begin{itemize}
-    \item \textbf{RLHF pipeline}:
-    \begin{enumerate}
-        \item Collect human preference data
-        \item Train reward model to predict preferences
-        \item Optimize policy with RL (PPO, DPO)
-    \end{enumerate}
-    \item \textbf{Direct Preference Optimization (DPO)}:
-    \begin{itemize}
-        \item Simpler alternative to PPO
-        \item Directly optimizes on preference data
-        \item No separate reward model needed
-    \end{itemize}
-    \item \textbf{Advanced RL techniques}:
-    \begin{itemize}
-        \item Process-based reward modeling
-        \item Outcome-based and trajectory-based rewards
-        \item Multi-objective RL for competing goals
-    \end{itemize}
+    \item \textbf{Example: Playing card game (DouDiZhu)}
+    \item \textbf{Trajectory sampling}: Play one complete game
+    \item \textbf{Environment feedback}: Win or lose
+    \item \textbf{Advantage function}: Game review and analysis
+    \item \textbf{Policy update}: Adjust strategy for next game
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/rl_algorithms.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{VeRL}
+\begin{center}
+Reinforcement learning training framework for LLMs with parallel training and inference acceleration
+\vspace{0.3cm}
+
+\includegraphics[width=0.9\textwidth]{images/verl_framework.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/reasoning_models.png}
+\end{center}
 \end{frame}
