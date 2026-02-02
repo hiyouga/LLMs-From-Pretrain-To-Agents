@@ -89,26 +89,30 @@
     % Define the size of the square
     \def\maxsize{6}
     
-    % Fill upper-left triangle (Comprehensive Environment)
-    \fill[green!20] (0,0) -- (0,\maxsize) -- (\maxsize,\maxsize) -- cycle;
+    % Origin point
+    \fill (0,0) circle (3pt) node[below left] {(0,0)};
     
-    % Fill lower-right triangle (Long Reasoning)
-    \fill[blue!20] (0,0) -- (\maxsize,0) -- (\maxsize,\maxsize) -- cycle;
+    % Draw orthogonal arrows from (0,0) to (0,1) and (1,0)
+    \draw[-{Stealth[length=3mm]}, thick, blue!60] (0,0) -- (0,\maxsize) node[left, midway] {Agent Environment};
+    \draw[-{Stealth[length=3mm]}, thick, green!60] (0,0) -- (\maxsize,0) node[below, midway] {Model Capability};
     
-    % Draw the diagonal line y=x
-    \draw[thick, dashed] (0,0) -- (\maxsize,\maxsize);
+    % Draw arrows from (0,1) and (1,0) converging to (1,1)
+    \draw[-{Stealth[length=3mm]}, thick, blue!60] (0,\maxsize) -- (\maxsize,\maxsize);
+    \draw[-{Stealth[length=3mm]}, thick, green!60] (\maxsize,0) -- (\maxsize,\maxsize);
     
-    % Axes
-    \draw[->, thick] (0,0) -- (\maxsize+1,0) node[right] {Model Capability};
-    \draw[->, thick] (0,0) -- (0,\maxsize+1) node[above] {Agent Environment};
+    % Endpoint at (1,1)
+    \fill (\maxsize,\maxsize) circle (3pt) node[above right] {(1,1)};
     
-    % Origin point (without text label)
-    \fill (0,0) circle (3pt);
+    % Mark intermediate points
+    \fill (0,\maxsize) circle (2pt) node[above left] {(0,1)};
+    \fill (\maxsize,0) circle (2pt) node[below right] {(1,0)};
     
-    % Labels for regions
-    \node[green!60!black, align=center] at (1.5,4.5) {Comprehensive\\Environment};
-    \node[blue!60!black, align=center] at (4.5,1.5) {Long\\Reasoning};
 \end{tikzpicture}
+
+\vspace{1em}
+\textit{The general trend of the world: what has been divided for a long time will surely unite.}
+
+\textit{天下大势，分久必合。}
 \end{center}
 \end{frame}
 
