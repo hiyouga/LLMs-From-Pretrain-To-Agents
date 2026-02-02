@@ -88,31 +88,35 @@
 \begin{tikzpicture}[scale=0.7, every node/.style={scale=0.7}]
     % Define the size of the square
     \def\maxsize{6}
-    
-    % Origin point
-    \fill (0,0) circle (3pt) node[below left] {(0,0)};
-    
-    % Draw orthogonal arrows from (0,0) to (0,1) and (1,0)
-    \draw[-{Stealth[length=3mm]}, thick, blue!60] (0,0) -- (0,\maxsize) node[left, midway] {Agent Environment};
-    \draw[-{Stealth[length=3mm]}, thick, green!60] (0,0) -- (\maxsize,0) node[below, midway] {Model Capability};
-    
-    % Draw arrows from (0,1) and (1,0) converging to (1,1)
-    \draw[-{Stealth[length=3mm]}, thick, blue!60] (0,\maxsize) -- (\maxsize,\maxsize);
-    \draw[-{Stealth[length=3mm]}, thick, green!60] (\maxsize,0) -- (\maxsize,\maxsize);
-    
-    % Endpoint at (1,1)
-    \fill (\maxsize,\maxsize) circle (3pt) node[above right] {(1,1)};
-    
-    % Mark intermediate points
-    \fill (0,\maxsize) circle (2pt) node[above left] {(0,1)};
-    \fill (\maxsize,0) circle (2pt) node[below right] {(1,0)};
-    
+
+    % Fill upper-left triangle (Comprehensive Environment)
+    \fill[green!20] (0,0) -- (0,\maxsize) -- (\maxsize,\maxsize) -- cycle;
+
+    % Fill lower-right triangle (Long Reasoning)
+    \fill[blue!20] (0,0) -- (\maxsize,0) -- (\maxsize,\maxsize) -- cycle;
+
+    % Draw the diagonal line y=x
+    \draw[thick, dashed] (0,0) -- (\maxsize,\maxsize);
+
+    % Axes
+    \draw[->, thick] (0,0) -- (0,\maxsize) -- (\maxsize+1,\maxsize);
+    \draw[->, thick] (0,0) -- (\maxsize,0) -- (\maxsize,\maxsize+1);
+
+    % Axis labels
+    \node[below] at (3.5,0) {Model Capability};
+    \node[left] at (0,3.5) {Agent Environment};
+
+    % Origin point (without text label)
+    \fill (0,0) circle (3pt);
+
+    % Labels for regions
+    \node[green!60!black, align=center] at (1.5,4.5) {Comprehensive\\Environment};
+    \node[blue!60!black, align=center] at (4.5,1.5) {Long\\Reasoning};
 \end{tikzpicture}
-
-\vspace{1em}
-\textit{The general trend of the world: what has been divided for a long time will surely unite.}
-
-\textit{天下大势，分久必合。}
+\end{center}
+\begin{center}
+\textit{Long divided, the world must unite. 天下大势，分久必合。}
 \end{center}
 \end{frame}
+
 
